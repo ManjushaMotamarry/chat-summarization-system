@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Data files
+data/raw/*.csv
+data/processed/*.csv
+*.db
+*.sqlite
+
+# Models
+models/checkpoints/*.pth
+models/checkpoints/*.bin
+models/artifacts/*.pkl
+
+# Logs
+logs/*.log
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# Docker
+*.log
