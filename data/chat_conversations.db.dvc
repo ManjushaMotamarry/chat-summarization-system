@@ -1,0 +1,5 @@
+outs:
+- md5: f0566d2e32b26d46cf6a6af24d808305
+  size: 17264640
+  hash: md5
+  path: chat_conversations.db
