@@ -1,0 +1,57 @@
+# Preprocessing configurations for text cleaning
+
+preprocessing:
+  default:
+    name: "Default Smart Preprocessing"
+    description: "Preserves context while normalizing text"
+    
+    # Text normalization
+    lowercase: true
+    normalize_whitespace: true
+    min_length: 1
+    
+    # File references - REPLACE with tokens (preserves context)
+    file_references:
+      action: "replace"  # Options: remove, replace, keep
+      patterns:
+        "<file_photo>": "[photo]"
+        "<file_gif>": "[gif]"
+        "<file_video>": "[video]"
+        "<file_audio>": "[audio]"
+        "<file_document>": "[document]"
+    
+    # URLs - REPLACE with token (preserves that link was shared)
+    urls:
+      action: "replace"  # Options: remove, replace, keep
+      replacement: "[link]"
+    
+    # Emojis - KEEP (convey sentiment and tone)
+    emojis:
+      text_emojis:
+        action: "keep"  # Keep :) :-) etc - they show sentiment
+      unicode_emojis:
+        action: "keep"  # Keep 😊 🎉 etc - they show emotion
+    
+    # What to remove (no value)
+    remove:
+      - extra_spaces       # Multiple spaces → single space
+      - leading_trailing   # Spaces at start/end
+  
+  # Alternative: Aggressive cleaning (for comparison)
+  aggressive:
+    name: "Aggressive Cleaning"
+    description: "Removes everything for minimal text"
+    lowercase: true
+    normalize_whitespace: true
+    file_references:
+      action: "remove"
+    urls:
+      action: "remove"
+    emojis:
+      text_emojis:
+        action: "remove"
+      unicode_emojis:
+        action: "remove"
+
+# Active preprocessing profile
+active_profile: "default"

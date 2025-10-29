@@ -20,6 +20,7 @@ class ConfigLoader:
         """Load all YAML config files"""
         config_files = {
             'dataset': 'dataset_config.yaml',
+            'preprocessing': 'preprocessing_config.yaml',
         }
         
         for name, filename in config_files.items():
@@ -46,9 +47,27 @@ class ConfigLoader:
         """Get database configuration"""
         return self.configs['dataset']['database']
     
+    def get_preprocessing_config(self, profile_name=None):
+        """
+        Get preprocessing configuration.
+        If profile_name is None, returns active profile.
+        """
+        if profile_name is None:
+            profile_name = self.configs['preprocessing']['active_profile']
+        
+        return self.configs['preprocessing']['preprocessing'][profile_name]
+    
+    def get_active_preprocessing_profile(self):
+        """Get the name of the currently active preprocessing profile"""
+        return self.configs['preprocessing']['active_profile']
+    
     def list_available_datasets(self):
         """List all configured datasets"""
         return list(self.configs['dataset']['datasets'].keys())
+    
+    def list_preprocessing_profiles(self):
+        """List all preprocessing profiles"""
+        return list(self.configs['preprocessing']['preprocessing'].keys())
 
 
 # Singleton instance
