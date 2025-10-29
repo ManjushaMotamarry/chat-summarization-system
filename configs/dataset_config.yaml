@@ -1,0 +1,35 @@
+# Dataset configurations for different conversation sources
+
+datasets:
+  samsum:
+    name: "SAMSum Messenger Dataset"
+    source: "knkarthick/samsum"
+    type: "huggingface"
+    format: "messenger_style"
+    fields:
+      dialogue: "dialogue"
+      summary: "summary"
+      id: "id"
+    separator: "\n"
+    description: "16k messenger-like conversations with summaries"
+    
+  multiwoz:
+    name: "MultiWOZ Task-Oriented Dialogues"
+    source: "multiwoz"
+    type: "huggingface"
+    format: "task_oriented"
+    fields:
+      dialogue: "dialog"
+      summary: "summary"
+      id: "dialogue_id"
+    separator: "\n"
+    description: "Multi-domain task-oriented dialogue dataset"
+
+# Active dataset (change this to switch datasets)
+active_dataset: "samsum"
+
+# Database settings
+database:
+  type: "sqlite"
+  path: "data/chat_conversations.db"
+  echo: false  # Set to true for SQL debugging
