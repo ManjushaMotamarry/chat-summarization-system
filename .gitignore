@@ -44,3 +44,4 @@ mlruns/
 
 # Docker
 *.log
+archive/
