@@ -20,9 +20,13 @@ data/processed/*.csv
 *.sqlite
 
 # Models
-models/checkpoints/*.pth
-models/checkpoints/*.bin
-models/artifacts/*.pkl
+# Ignore trained model files but not source code
+models/checkpoints/
+models/test_checkpoints/
+models/best_model/
+models/test_best_model/
+mlruns/
+
 
 # Logs
 logs/*.log
@@ -45,5 +49,4 @@ mlruns/
 # Docker
 *.log
 archive/
-models/
 mlruns/

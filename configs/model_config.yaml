@@ -14,7 +14,7 @@ model:
   weight_decay: 0.01         # Regularization
   
   # Evaluation
-  eval_steps: 500            # Evaluate every N steps
+  eval_steps: 999999          # Effectively disable during training           
   save_steps: 1000           # Save checkpoint every N steps
   logging_steps: 100         # Log metrics every N steps
   
