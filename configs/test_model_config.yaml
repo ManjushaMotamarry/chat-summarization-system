@@ -1,0 +1,25 @@
+data:
+  test_path: data/processed/test.csv
+  train_path: data/processed/test_subset/train.csv
+  val_path: data/processed/test_subset/val.csv
+device: cpu
+mlflow:
+  experiment_name: chat_summarization
+  tracking_uri: mlruns
+model:
+  batch_size: 8
+  best_model_dir: models/test_best_model
+  early_stopping: true
+  eval_steps: 50
+  learning_rate: 5.0e-05
+  length_penalty: 2.0
+  logging_steps: 10
+  max_input_length: 512
+  max_target_length: 128
+  name: facebook/bart-base
+  num_beams: 4
+  num_epochs: 1
+  output_dir: models/test_checkpoints
+  save_steps: 100
+  warmup_steps: 500
+  weight_decay: 0.01

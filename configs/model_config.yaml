@@ -1,0 +1,42 @@
+# Model Training Configuration
+
+model:
+  # Base model from HuggingFace
+  name: "facebook/bart-base"  # Options: facebook/bart-base, t5-small, google/pegasus-xsum
+  
+  # Training parameters
+  max_input_length: 512      # Maximum tokens in input conversation
+  max_target_length: 128     # Maximum tokens in summary
+  batch_size: 8              # Reduce to 4 if out of memory
+  learning_rate: 0.00005     # 5e-5
+  num_epochs: 3              # Number of training epochs
+  warmup_steps: 500          # Learning rate warmup
+  weight_decay: 0.01         # Regularization
+  
+  # Evaluation
+  eval_steps: 500            # Evaluate every N steps
+  save_steps: 1000           # Save checkpoint every N steps
+  logging_steps: 100         # Log metrics every N steps
+  
+  # Generation parameters (for inference)
+  num_beams: 4               # Beam search width
+  length_penalty: 2.0        # Favor longer/shorter summaries
+  early_stopping: true       # Stop when all beams finish
+  
+  # Paths
+  output_dir: "models/checkpoints"
+  best_model_dir: "models/best_model"
+
+# MLflow tracking
+mlflow:
+  experiment_name: "chat_summarization"
+  tracking_uri: "mlruns"
+  
+# Data paths
+data:
+  train_path: "data/processed/train.csv"
+  val_path: "data/processed/val.csv"
+  test_path: "data/processed/test.csv"
+
+# Compute
+device: "cpu"  
