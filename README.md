@@ -406,5 +406,3 @@ This project was built as a comprehensive demonstration of MLOps skills, coverin
 For questions or collaboration opportunities, please reach out via [motamarry.m@northeastern.edu] or open an issue.
 
 ---
-
-**Built with ❤️ and lots of ☕**
