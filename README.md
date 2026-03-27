@@ -295,33 +295,6 @@ python scripts/test_preprocessor.py
 python scripts/test_model_inference.py
 ```
 
----
-
-## 📈 Future Enhancements
-
-### Short-term (Next 2-4 weeks)
-- [ ] Add comprehensive unit tests (pytest)
-- [ ] Implement response caching in API
-- [ ] Add batch processing endpoint
-- [ ] Create Docker container for deployment
-- [ ] Set up GitHub Actions CI/CD
-
-### Medium-term (1-3 months)
-- [ ] Fine-tune on customer service dataset (MultiWOZ)
-- [ ] Experiment with T5 and Pegasus models
-- [ ] Add sentiment analysis to summaries
-- [ ] Implement priority/urgency detection
-- [ ] A/B testing framework for model comparison
-
-### Long-term (3-6 months)
-- [ ] Multi-language support
-- [ ] Real-time streaming summarization
-- [ ] Integration with ticketing systems (Zendesk, Freshdesk)
-- [ ] Feedback loop for continuous improvement
-- [ ] Production monitoring and alerting
-
----
-
 ## 🛠️ Tech Stack
 
 | Component | Technology | Purpose |
@@ -377,23 +350,7 @@ Contributions are welcome! Please:
 5. Open a Pull Request
 
 
----
-
-## 👤 Author
-
-**Manjusha**
-
-This project was built as a comprehensive demonstration of MLOps skills, covering:
-- Data engineering and ETL pipelines
-- Exploratory data analysis
-- ML model training and evaluation
-- API deployment and serving
-- Interactive UI development
-- Production-ready system design
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Dataset:** SAMSum dataset from HuggingFace
 - **Model:** BART from Facebook AI Research
